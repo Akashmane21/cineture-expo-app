@@ -1,20 +1,29 @@
+
+import React ,{useEffect} from 'react'
+import { NavigationContainer,DefaultTheme   } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Nav from './Nav/Nav';
+
+
+
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: 'blue',
+  },
+};
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  return (
+    <>
+           <StatusBar style="light" />
+
+    <NavigationContainer theme={MyTheme} >
+    <Nav />
+   </NavigationContainer> 
+   </>
+  )
+}
